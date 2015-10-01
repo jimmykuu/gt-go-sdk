@@ -105,8 +105,7 @@ func main() {
 			return
 		}
 
-		challenge := geeTest.Challenge()
-		url := geeTest.EmbedURL(challenge)
+		url := geeTest.EmbedURL()
 
 		err = t.Execute(w, map[string]interface{}{
 			"url": url,

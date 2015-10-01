@@ -81,10 +81,10 @@ func (geeTest GeeTest) postValue(host string, values url.Values) string {
 	return string(body)
 }
 
-func (geeTest GeeTest) EmbedURL(challenge string) string {
-	return fmt.Sprintf("http://api.geetest.com/get.php?gt=%s&challenge=%s&product=embed", geeTest.CaptchId, challenge)
+func (geeTest GeeTest) EmbedURL() string {
+	return fmt.Sprintf("http://api.geetest.com/get.php?gt=%s&challenge=%s&product=embed", geeTest.CaptchId, geeTest.Challenge())
 }
 
-func (geeTest GeeTest) PopupURL(challenge, popupBtnId string) string {
-	return fmt.Sprintf("http://api.geetest.com/get.php?gt=%s&challenge=%s&product=popup&popupbtnid=%s", geeTest.CaptchId, challenge, popupBtnId)
+func (geeTest GeeTest) PopupURL(popupBtnId string) string {
+	return fmt.Sprintf("http://api.geetest.com/get.php?gt=%s&challenge=%s&product=popup&popupbtnid=%s", geeTest.CaptchId, geeTest.Challenge(), popupBtnId)
 }
