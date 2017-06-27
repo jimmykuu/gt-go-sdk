@@ -82,9 +82,9 @@ func (geeTest GeeTest) postValue(host string, values url.Values) string {
 }
 
 func (geeTest GeeTest) EmbedURL() string {
-	return fmt.Sprintf("http://api.geetest.com/get.php?gt=%s&challenge=%s&product=embed", geeTest.CaptchId, geeTest.Challenge())
+	return fmt.Sprintf("https://api.geetest.com/get.php?gt=%s&challenge=%s&product=embed", geeTest.CaptchId, geeTest.Challenge())
 }
 
 func (geeTest GeeTest) PopupURL(popupBtnId string) string {
-	return fmt.Sprintf("http://api.geetest.com/get.php?gt=%s&challenge=%s&product=popup&popupbtnid=%s", geeTest.CaptchId, geeTest.Challenge(), popupBtnId)
+	return fmt.Sprintf("https://api.geetest.com/get.php?gt=%s&challenge=%s&product=popup&popupbtnid=%s", geeTest.CaptchId, geeTest.Challenge(), popupBtnId)
 }
